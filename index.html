@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="./script.js"></script>
+  <title>ROCK! PAPER! SCISSORS!</title>
+</head>
+<body>
+  <h1>ROCK! PAPER! SCISSORS!</h1>
+  <!--<button>Toggle Dark Mode</button>-->
+  <div class="gameboard">
+    <div>
+      <span id="c-message">The Computer is waiting for you</span> <span id="dots">...</span>
+    </div>
+    <div class="battlefield">
+      <p id="end-message">WHO WILL WIN????</p>
+    </div>
+    <div id="p-choice">
+      <ul>
+        <p id="p-message">Choose One:</p>
+        <li><button id="rock" onclick="pChoose(rock);">ROCK!</button></li>
+        <li><button id="paper" onclick="pChoose(paper)">PAPER!</button></li>
+        <li><button id="scissors" onclick="pChoose(scissors)">SCISSORS!</button></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

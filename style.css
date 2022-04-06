@@ -1,0 +1,53 @@
+:root {
+  --main-color: black;
+  --opposite-color: white;
+  --pallette-1: #69009b;
+  --pallette-2: royalblue;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--main-color);
+  color: var(--opposite-color)
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  margin: 8px;
+  padding: 8px 16px;
+  width: 150px;
+  align-self: center;
+  font-weight: bold;
+  border: 3px solid var(--pallette-2);
+  border-radius: 6px;
+  color: var(--opposite-color);
+  background-color: var(--main-color);
+}
+
+button:hover {
+  transition: 0.6s;
+  background-color: var(--pallette-1);
+}
+
+.gameboard {
+  margin: 16px;
+  border: 4px dashed var(--pallette-1);
+  border-radius: 16px;
+  width: 60%;
+  max-width: 800px;
+  padding: 32px;
+  align-self: center;
+}
