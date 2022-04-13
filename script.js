@@ -73,7 +73,7 @@ function displayWinner() {
 }
 
 function resetRound(){
-
+}
 
 function pChoose(choice) {
     pChoice = choice;
