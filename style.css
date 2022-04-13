@@ -51,3 +51,8 @@ button:hover {
   padding: 32px;
   align-self: center;
 }
+
+#scores {
+  display: flex;
+  justify-content: space-around;
+}

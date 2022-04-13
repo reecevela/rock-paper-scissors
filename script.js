@@ -1,9 +1,13 @@
 const cDefaultMessage = 'The computer is waiting for you';
 const cChoseMessage = 'The computer chose';
+const pDefaultMessage = 'Choose One:'
 
 let pChoice = "";
 let cChoice = "";
 let pMessage = "";
+
+let pScore = 0;
+let cScore = 0;
 
 function pChoose(choice) {
     pChoice = choice;
@@ -13,6 +17,16 @@ function pChoose(choice) {
     alert(pMessage.textContent +  `\n (Press Enter or Ok)`);
     cChoose();
     displayWinner();
+    updateScores();
+    if (pScore >= 5) {
+      alert("You WON!");
+      alert("nice");
+      resetGame();
+    } else if (cScore >= 5) {
+      alert("The computer won.");
+      alert(": (");
+      resetGame();
+    }
 }
 
 function cChoose() {
@@ -39,6 +53,17 @@ function cChoose() {
 
 function displayWinner() {
   const winner = evaluateGame();
+
+  switch (winner) {
+    case "computer":
+      ++cScore;
+      break;
+    case "player":
+      ++pScore;
+      break;
+    default:
+      break;
+  }
 
   alert(`Winner: ${winner} \n (Enter or Ok to play again)`);
 
@@ -72,6 +97,24 @@ function displayWinner() {
   }
 }
 
+function updateScores(){
+  const pScoreMessage = document.getElementById("p-score");
+  const cScoreMessage = document.getElementById("c-score");
 
+  pScoreMessage.textContent = "Player: " + pScore;
+  cScoreMessage.textContent = "Computer: " + cScore;
+}
 
+function resetGame() {
+  const computerMessage = document.getElementById('c-message');
+  const playerMessage = document.getElementById('p-message');
 
+  computerMessage.textContent = cDefaultMessage;
+  playerMessage.textContent = pDefaultMessage;
+
+  pScore = 0;
+  cScore = 0;
+
+  updateScores();
+
+}
