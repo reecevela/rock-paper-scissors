@@ -1,5 +1,5 @@
-const cDefaultMessage = 'The Computer is waiting for you';
-const cChoseMessage = 'The Computer chose';
+const cDefaultMessage = 'The computer is waiting for you';
+const cChoseMessage = 'The computer chose';
 
 let pChoice = "";
 let cChoice = "";
@@ -72,30 +72,6 @@ function displayWinner() {
   }
 }
 
-function resetRound(){
-}
 
-function pChoose(choice) {
-    pChoice = choice;
-    document.getElementById("p-message").textContent = `You chose ${pChoice}`;
-    cChoose();
-}
 
-function cChoose() {
-  const message = document.getElementById('c-message');
-  let cChoice = '';
-
-  switch (pChoice) {
-    case 'rock':
-      cChoice = ' paper';
-      break;
-    case 'paper':
-      cChoice = ' scissors';
-      break;
-    case 'scissors':
-      cChoice = ' rock';
-  }
-
-  message.textContent = cChoseMessage + cChoice;
-}
 
