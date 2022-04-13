@@ -1,6 +1,7 @@
-const cDefaultMessage = 'The computer is waiting for you';
-const cChoseMessage = 'The computer chose';
-const pDefaultMessage = 'Choose One:'
+const CDEFAULTMESSAGE = 'The computer is waiting for you';
+const CCHOSEMESSAGE = 'The computer chose';
+const PDEFAULTMESSAGE = 'Choose One:'
+const FINALSCORE = 3;
 
 let pChoice = "";
 let cChoice = "";
@@ -18,11 +19,11 @@ function pChoose(choice) {
     cChoose();
     displayWinner();
     updateScores();
-    if (pScore >= 5) {
+    if (pScore >= FINALSCORE) {
       alert("You WON!");
       alert("nice");
       resetGame();
-    } else if (cScore >= 5) {
+    } else if (cScore >= FINALSCORE) {
       alert("The computer won.");
       alert(": (");
       resetGame();
@@ -33,7 +34,7 @@ function cChoose() {
   const message = document.getElementById('c-message');
 
   cChoice = pickRandomOfThree();
-  message.textContent = cChoseMessage + " " + cChoice;
+  message.textContent = CCHOSEMESSAGE + " " + cChoice;
   alert(message.textContent + ` \n (Press Enter or Ok)`);
 
   function pickRandomOfThree(one = "rock", two = "paper", three = "scissors") {
@@ -109,8 +110,8 @@ function resetGame() {
   const computerMessage = document.getElementById('c-message');
   const playerMessage = document.getElementById('p-message');
 
-  computerMessage.textContent = cDefaultMessage;
-  playerMessage.textContent = pDefaultMessage;
+  computerMessage.textContent = CDEFAULTMESSAGE;
+  playerMessage.textContent = PDEFAULTMESSAGE;
 
   pScore = 0;
   cScore = 0;
