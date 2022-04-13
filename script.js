@@ -34,7 +34,7 @@ function cChoose() {
   const message = document.getElementById('c-message');
 
   cChoice = pickRandomOfThree();
-  message.textContent = CCHOSEMESSAGE + " " + cChoice;
+  message.textContent = `${CCHOSEMESSAGE} ${cChoice}`;
   alert(message.textContent + ` \n (Press Enter or Ok)`);
 
   function pickRandomOfThree(one = "rock", two = "paper", three = "scissors") {
