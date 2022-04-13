@@ -12,19 +12,16 @@
   <h1>ROCK! PAPER! SCISSORS!</h1>
   <!--<button>Toggle Dark Mode</button>-->
   <div class="gameboard">
-    <div>
-      <span id="c-message">The Computer is waiting for you</span> <span id="dots">...</span>
-    </div>
-    <div class="battlefield">
-      <p id="end-message">WHO WILL WIN????</p>
-    </div>
     <div id="p-choice">
+      <p id="p-message">Choose One:</p>
       <ul>
-        <p id="p-message">Choose One:</p>
-        <li><button id="rock" onclick="pChoose(rock);">ROCK!</button></li>
-        <li><button id="paper" onclick="pChoose(paper)">PAPER!</button></li>
-        <li><button id="scissors" onclick="pChoose(scissors)">SCISSORS!</button></li>
+        <li><button id="rock" onclick="pChoose('rock');">ROCK!</button></li>
+        <li><button id="paper" onclick="pChoose('paper');">PAPER!</button></li>
+        <li><button id="scissors" onclick="pChoose('scissors');">SCISSORS!</button></li>
       </ul>
+    </div>
+    <div>
+      <span id="c-message">The Computer is waiting for you</span>
     </div>
   </div>
 </body>
