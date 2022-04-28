@@ -9,10 +9,9 @@
   <title>ROCK! PAPER! SCISSORS!</title>
 </head>
 <body>
-  <h1>ROCK! PAPER! SCISSORS!</h1>
-  <p>This site uses pop-ups!<br> Please make sure they're enabled!</p>
+  <h1 id="rps">ROCK! PAPER! SCISSORS!</h1>
   <div class="gameboard">
-    <div id="scores">
+    <div class="game-section" id="scores">
       <div id="p-score">
         Player: 0
       </div>
@@ -20,16 +19,20 @@
         Computer: 0
       </div>
     </div>
-    <div id="p-choice">
-      <p id="p-message">Choose One:</p>
-      <ul>
-        <li><button id="rock" onclick="pChoose('rock');">ROCK!</button></li>
-        <li><button id="paper" onclick="pChoose('paper');">PAPER!</button></li>
-        <li><button id="scissors" onclick="pChoose('scissors');">SCISSORS!</button></li>
-      </ul>
-    </div>
-    <div>
-      <span id="c-message">The Computer is waiting for you</span>
+    <div class="game-section">
+      <div class="result">
+        <div class="choice">
+          <p id="p-message">Choose One:</p>
+        </div>
+        <ul>
+          <li><button id="rock" onclick="pChoose('rock');">ROCK!</button></li>
+          <li><button id="paper" onclick="pChoose('paper');">PAPER!</button></li>
+          <li><button id="scissors" onclick="pChoose('scissors');">SCISSORS!</button></li>
+        </ul>
+      </div>
+      <div class="choice">
+        <p id="c-message">The Computer is waiting for you</p>
+      </div>
     </div>
   </div>
 </body>

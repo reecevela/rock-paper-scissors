@@ -50,9 +50,26 @@ button:hover {
   max-width: 800px;
   padding: 32px;
   align-self: center;
+  min-width: 330px;
 }
 
-#scores {
+.game-section {
   display: flex;
   justify-content: space-around;
+  margin: 8px 0;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result {
+  padding: 0;
+}
+
+#p-message, #c-message {
+  border-radius: 3px;
+  padding: 4px;
 }

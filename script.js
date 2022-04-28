@@ -15,18 +15,19 @@ function pChoose(choice) {
     const pMessage = document.getElementById("p-message");
 
     pMessage.textContent = `You chose ${pChoice}`;
-    alert(pMessage.textContent +  `\n (Press Enter or Ok)`);
     cChoose();
     displayWinner();
     updateScores();
     if (pScore >= FINALSCORE) {
-      alert("You WON!");
-      alert("nice");
-      resetGame();
+      //alert("You WON!");
+      //alert("nice");
+      document.getElementById("rps").textContent = "YOU WON";
+      delay(4000).then(() => resetGame())
     } else if (cScore >= FINALSCORE) {
-      alert("The computer won.");
-      alert(": (");
-      resetGame();
+      //alert("The computer won.");
+      //alert(": (");
+      document.getElementById("rps").textContent = "YOU LOST";
+      delay(4000).then(() => resetGame());
     }
 }
 
@@ -35,7 +36,7 @@ function cChoose() {
 
   cChoice = pickRandomOfThree();
   message.textContent = `${CCHOSEMESSAGE} ${cChoice}`;
-  alert(message.textContent + ` \n (Press Enter or Ok)`);
+  
 
   function pickRandomOfThree(one = "rock", two = "paper", three = "scissors") {
     const randNum = Math.floor(Math.random()*3);
@@ -47,26 +48,38 @@ function cChoose() {
       case 2: 
         return three;
       default:
-        return "There's a bug"
+        return "There's a bug";
     }
   }
 }
 
 function displayWinner() {
   const winner = evaluateGame();
+  const playerSection = document.getElementById("p-message");
+  const computerSection = document.getElementById("c-message");
 
   switch (winner) {
     case "computer":
       ++cScore;
+      playerSection.style.backgroundColor = "rgba(255,0,0,0.3)";
+      computerSection.style.backgroundColor = "rgba(0,255,0,0.3)";
       break;
     case "player":
       ++pScore;
+      playerSection.style.backgroundColor = "rgba(0,255,0,0.3)";
+      computerSection.style.backgroundColor = "rgba(255,0,0,0.3)";
       break;
     default:
+      playerSection.style.backgroundColor = "rgb(0)";
+      computerSection.style.backgroundColor = "rgb(0)";
       break;
   }
 
-  alert(`Winner: ${winner} \n (Enter or Ok to play again)`);
+
+
+
+  //alert(`Winner: ${winner} \n (Enter or Ok to play again)`);
+  //Needs to display winner here using result
 
   function evaluateGame(){
     if (pChoice === cChoice) {
@@ -112,10 +125,15 @@ function resetGame() {
 
   computerMessage.textContent = CDEFAULTMESSAGE;
   playerMessage.textContent = PDEFAULTMESSAGE;
+  document.getElementById("rps").textContent = "ROCK! PAPER! SCISSORS!";
 
   pScore = 0;
   cScore = 0;
 
   updateScores();
 
+}
+
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
 }
