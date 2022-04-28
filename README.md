@@ -2,7 +2,7 @@
 
 Play "Rock, Paper, Scissors" against the computer!
 
-In [this project](reecevela.github.io/rock-paper-scissors/index.html), I learned how to tons of things in JavaScript!
+In [this project](https://www.reecevela.github.io/rock-paper-scissors/index.html), I learned how to tons of things in JavaScript!
 
 - use switch statements and nest them
 - create functions
