@@ -1,8 +1,8 @@
 :root {
   --main-color: black;
   --opposite-color: white;
-  --pallette-1: #69009b;
-  --pallette-2: royalblue;
+  --pallette-1: #3e9fd8;
+  --pallette-2: rgb(58, 204, 143);
 }
 
 body {
