@@ -3,6 +3,9 @@ const CCHOSEMESSAGE = 'The computer chose';
 const PDEFAULTMESSAGE = 'Choose One:'
 const FINALSCORE = 3;
 
+const playerSection = document.getElementById("p-message");
+const computerSection = document.getElementById("c-message");
+
 let pChoice = "";
 let cChoice = "";
 let pMessage = "";
@@ -19,13 +22,13 @@ function pChoose(choice) {
     displayWinner();
     updateScores();
     if (pScore >= FINALSCORE) {
-      //alert("You WON!");
-      //alert("nice");
+      playerSection.style.backgroundColor = "rgb(0)";
+      computerSection.style.backgroundColor = "rgb(0)";
+      alert("Nice!");
       document.getElementById("rps").textContent = "YOU WON";
       delay(4000).then(() => resetGame())
     } else if (cScore >= FINALSCORE) {
-      //alert("The computer won.");
-      //alert(": (");
+      alert("You'll get it next time!");
       document.getElementById("rps").textContent = "YOU LOST";
       delay(4000).then(() => resetGame());
     }
@@ -55,8 +58,6 @@ function cChoose() {
 
 function displayWinner() {
   const winner = evaluateGame();
-  const playerSection = document.getElementById("p-message");
-  const computerSection = document.getElementById("c-message");
 
   switch (winner) {
     case "computer":
